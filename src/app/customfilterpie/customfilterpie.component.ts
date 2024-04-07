@@ -18,7 +18,7 @@ export class CustomfilterpieComponent implements OnInit {
 
   ngOnInit(): void {
     this._GetnumService.getUser().subscribe(res=>{console.log("custom data in num ",res);
-//........................
+//..................................................
     //step 2
     this.users=res;
     })
