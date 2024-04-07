@@ -1,0 +1,38 @@
+<p>customfilterpie works!</p>
+
+<p>ctrl + shift + c then we get user array</p>
+<div class="container">
+  <div class="row jsustfy-content-center">
+    <div class="form-group col-md-12 mt-2">
+      <label>Search By Name </label>
+      <input type="text" class="form-control" placeholder="by name" [(ngModel)]="searchByName">
+      <!-- executing  [(ngModel)] we need formsModule in app.module.ts -->
+      <!-- <br>
+      <label>Search By id</label>
+      <input type="number" class="form-control" placeholder="by name" [(ngModel)]="searchById"> -->
+    </div>
+    <div class="col-md-12">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>User Name</th>
+            <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users | filter:searchByName">
+          <!-- users is from ts file And for searching we need to apply filter pipe-->
+          <!-- searchByName madun value gheun search karayachi ahe mhanun ti --- >> filter : searchByName -->
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.email}}</td>
+        </tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

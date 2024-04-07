@@ -7,16 +7,24 @@ import { PipeComponent } from './pipe/pipe.component';
 import { AsyncpipeComponent } from './asyncpipe/asyncpipe.component';
 import { AsyncpipewithpromiseComponent } from './asyncpipewithpromise/asyncpipewithpromise.component';
 
+import { FilterPipe } from './customPipeFile/filter.pipe';
+import{ HttpClientModule} from '@angular/common/http';
+import { CustomfilterpieComponent } from './customfilterpie/customfilterpie.component'
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     PipeComponent,
     AsyncpipeComponent,
-    AsyncpipewithpromiseComponent
+    AsyncpipewithpromiseComponent,
+    FilterPipe,
+    CustomfilterpieComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

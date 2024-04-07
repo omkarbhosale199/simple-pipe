@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GetnumService } from '../service/getnum.service';
 
 @Component({
   selector: 'app-asyncpipewithpromise',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AsyncpipewithpromiseComponent implements OnInit {
 
-  constructor() { }
+
+  numbers: number[] = [];
+
+  constructor(private _GetnumService:GetnumService) {}
 
   ngOnInit(): void {
+    this._GetnumService.getNumber();
+    };
   }
-
-}
